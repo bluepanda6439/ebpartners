@@ -1,30 +1,42 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
 import { navLinks } from "@/lib/site-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/90 bg-surface/95 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <a href="#" className="font-serif text-lg tracking-wide text-foreground">
-          EB Partners
-        </a>
-        <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+    <header className="border-b border-white/10 bg-forest text-white shadow-[0_18px_45px_-34px_rgba(0,0,0,0.65)]">
+      <Container className="flex min-h-[30vh] flex-col justify-center gap-6 py-[1.5vh] md:flex-row md:items-center md:justify-between">
         <a
-          href="#kontakt"
-          className="rounded-full border border-foreground/20 bg-foreground px-4 py-2 text-xs font-semibold tracking-wide text-white transition hover:bg-gold hover:text-black"
+          href="#"
+          className="w-full shrink-0 md:w-[45%]"
+          aria-label="EB Partners"
         >
-          Umów konsultację
+          <span className="relative block h-[27vh] w-full max-w-[620px] overflow-hidden">
+            <Image
+              src="/loga/logo-na-strone.png"
+              alt="EB Partners"
+              fill
+              priority
+              sizes="(min-width: 768px) 45vw, 92vw"
+              className="object-contain"
+              style={{ objectPosition: "center 50%" }}
+            />
+          </span>
         </a>
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-4 md:justify-end">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-base text-white/[0.84] md:justify-end lg:text-lg">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-gold"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </Container>
     </header>
   );

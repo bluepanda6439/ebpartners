@@ -8,7 +8,10 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="section-shell section-fade border-b border-border bg-surface py-20">
+    <section
+      id="opinie"
+      className="section-shell section-fade border-b border-border bg-surface py-20"
+    >
       <Container>
         <div className="mb-10 space-y-4">
           <p className="text-xs uppercase tracking-[0.2em] text-gold">

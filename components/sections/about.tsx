@@ -19,6 +19,7 @@ export function AboutSection() {
           </p>
         </div>
         <div className="rounded-2xl border border-border bg-surface-soft p-6">
+          <div className="mb-4 h-1.5 w-16 rounded-full bg-forest" />
           <h3 className="mb-3 text-lg font-semibold">Obsługiwane języki</h3>
           <p className="text-sm text-muted">PL / ENG / UA / RU (placeholder)</p>
         </div>
