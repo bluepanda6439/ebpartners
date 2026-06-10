@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { processSteps } from "@/lib/site-data";
+import { processGroups } from "@/lib/site-data";
 
 export function ProcessSection() {
   return (
@@ -12,19 +12,30 @@ export function ProcessSection() {
           <p className="text-xs uppercase tracking-[0.2em] text-gold">Proces</p>
           <h2 className="font-serif text-3xl md:text-5xl">Jak współpracujemy</h2>
         </div>
-        <ol className="grid gap-4 md:grid-cols-2">
-          {processSteps.map((step, index) => (
-            <li
-              key={step}
+        <div className="grid gap-5 md:grid-cols-2">
+          {processGroups.map((group) => (
+            <article
+              key={group.title}
               className="rounded-2xl border border-border bg-surface p-6"
             >
-              <p className="mb-3 text-xs uppercase tracking-[0.2em] text-gold">
-                Krok {index + 1}
+              <div className="mb-5 h-1.5 w-16 rounded-full bg-forest" />
+              <h3 className="mb-3 text-2xl font-semibold">{group.title}</h3>
+              <p className="mb-6 text-sm leading-7 text-muted">
+                {group.description}
               </p>
-              <p className="text-lg">{step}</p>
-            </li>
+              <ol className="space-y-3">
+                {group.steps.map((step, index) => (
+                  <li key={step} className="flex gap-3 text-sm leading-7">
+                    <span className="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-forest text-xs font-semibold text-white">
+                      {index + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </article>
           ))}
-        </ol>
+        </div>
       </Container>
     </section>
   );

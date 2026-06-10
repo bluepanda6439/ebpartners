@@ -45,7 +45,7 @@ export function ContactForm() {
             onChange={(event) =>
               setForm((prev) => ({ ...prev, name: event.target.value }))
             }
-            className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-gold"
+            className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-3 text-foreground outline-none transition focus:border-forest"
           />
         </label>
         <label className="text-sm text-muted">
@@ -56,7 +56,7 @@ export function ContactForm() {
             onChange={(event) =>
               setForm((prev) => ({ ...prev, phone: event.target.value }))
             }
-            className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-gold"
+            className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-3 text-foreground outline-none transition focus:border-forest"
           />
         </label>
       </div>
@@ -68,7 +68,7 @@ export function ContactForm() {
           onChange={(event) =>
             setForm((prev) => ({ ...prev, email: event.target.value }))
           }
-          className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-gold"
+          className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-3 text-foreground outline-none transition focus:border-forest"
         />
       </label>
       <label className="text-sm text-muted">
@@ -79,7 +79,7 @@ export function ContactForm() {
             setForm((prev) => ({ ...prev, message: event.target.value }))
           }
           rows={5}
-          className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-gold"
+          className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-3 text-foreground outline-none transition focus:border-forest"
         />
       </label>
 
@@ -93,7 +93,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-black"
+        className="rounded-full bg-forest px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-black"
       >
         Wyślij wiadomość
       </button>

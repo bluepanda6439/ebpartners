@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EB Partners | Szkielet strony",
-  description: "Szkielet nowej strony EB Partners",
+  title: "EB Partners | Legalizacja pobytu",
+  description: "Strona EB Partners z elegancką, zielono-złotą identyfikacją wizualną.",
 };
 
 export default function RootLayout({

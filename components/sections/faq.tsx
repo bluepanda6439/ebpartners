@@ -16,7 +16,7 @@ export function FaqSection() {
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="rounded-2xl border border-border bg-surface p-5"
+              className="rounded-2xl border border-forest/12 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8f4_100%)] p-5"
             >
               <summary className="cursor-pointer text-base font-medium">
                 {item.question}

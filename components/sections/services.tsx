@@ -20,8 +20,9 @@ export function ServicesSection() {
           {services.map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-border bg-surface p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.35)]"
+              className="rounded-2xl border border-forest/12 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8f4_100%)] p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.35)]"
             >
+              <div className="mb-5 h-1.5 w-16 rounded-full bg-forest" />
               <h3 className="mb-3 text-xl font-semibold">{item.title}</h3>
               <p className="text-sm leading-7 text-muted">{item.description}</p>
             </article>

@@ -5,6 +5,9 @@
   --foreground: #151515;
   --surface: #ffffff;
   --surface-soft: #f2efe8;
+  --forest: #0c3427;
+  --forest-deep: #08251d;
+  --forest-soft: #e1ebe6;
   --muted: #5d5a56;
   --gold: #b9934f;
   --gold-soft: #cfb27d;
@@ -16,6 +19,9 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-surface-soft: var(--surface-soft);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-soft: var(--forest-soft);
   --color-muted: var(--muted);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
@@ -39,7 +45,7 @@ html {
 }
 
 main section {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 32px;
 }
 
 @keyframes sectionFadeUp {
@@ -61,10 +67,16 @@ main section {
   position: relative;
 }
 
+.section-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
 .section-shell::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   background:
     linear-gradient(
@@ -77,6 +89,6 @@ main section {
 }
 
 ::selection {
-  background: rgba(185, 147, 79, 0.24);
+  background: rgba(198, 162, 77, 0.26);
   color: #151515;
 }
