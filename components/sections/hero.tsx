@@ -23,10 +23,10 @@ export function HeroSection() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="#kontakt"
+              href="#proces"
               className="rounded-full bg-forest px-8 py-4 text-base font-semibold text-white shadow-[0_18px_45px_-30px_rgba(12,52,39,0.8)] transition hover:bg-gold hover:text-black md:px-10"
             >
-              Umów konsultację
+              Select your path
             </a>
             <a
               href="#o-firmie"
