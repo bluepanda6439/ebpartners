@@ -17,7 +17,6 @@ export function ProcessSection({
   onAudienceChange,
 }: ProcessSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  const [shouldAnimate, setShouldAnimate] = useState(false);
   const [hasEntered, setHasEntered] = useState(true);
   const activeGroup =
     processGroups.find((group) => group.key === audience) ?? processGroups[0];
@@ -33,6 +32,10 @@ export function ProcessSection({
       return;
     }
 
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,7 +47,6 @@ export function ProcessSection({
     );
 
     const frame = window.requestAnimationFrame(() => {
-      setShouldAnimate(true);
       setHasEntered(false);
       observer.observe(section);
     });
@@ -81,7 +83,7 @@ export function ProcessSection({
         <div className="flex min-h-[58vh] flex-col items-center justify-center space-y-5 py-20 text-center md:min-h-[60vh]">
           <p
             className={`text-base font-semibold uppercase tracking-[0.32em] text-gold-soft transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:text-xl ${
-              !shouldAnimate || hasEntered
+              hasEntered
                 ? "translate-y-0 scale-100 opacity-100 blur-0"
                 : "translate-y-10 scale-95 opacity-0 blur-sm"
             }`}
@@ -90,7 +92,7 @@ export function ProcessSection({
           </p>
           <h2
             className={`max-w-3xl font-serif text-3xl leading-tight text-white transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:text-5xl ${
-              !shouldAnimate || hasEntered
+              hasEntered
                 ? "translate-y-0 scale-100 opacity-100 blur-0 delay-150"
                 : "translate-y-12 scale-95 opacity-0 blur-sm"
             }`}
@@ -99,7 +101,7 @@ export function ProcessSection({
           </h2>
           <div
             className={`inline-flex rounded-full border border-white/25 bg-white/12 p-1 shadow-[0_18px_70px_-45px_rgba(0,0,0,0.9)] backdrop-blur-md transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              !shouldAnimate || hasEntered
+              hasEntered
                 ? "translate-y-0 scale-100 opacity-100 blur-0 delay-300"
                 : "translate-y-12 scale-90 opacity-0 blur-sm"
             }`}
@@ -127,7 +129,7 @@ export function ProcessSection({
         </div>
         <article
           className={`mx-auto mb-20 -mt-20 max-w-5xl overflow-hidden rounded-3xl border border-white/12 bg-surface text-foreground shadow-[0_26px_90px_-52px_rgba(0,0,0,0.9)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:-mt-44 ${
-            !shouldAnimate || hasEntered
+            hasEntered
               ? "translate-y-0 scale-100 opacity-100 blur-0 delay-500"
               : "translate-y-16 scale-[0.97] opacity-0 blur-sm"
           }`}

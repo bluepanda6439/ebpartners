@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/layout/back-to-top";
 import { SiteHeader } from "@/components/layout/site-header";
 import { AboutSection } from "@/components/sections/about";
 import { AudienceFlow } from "@/components/sections/audience-flow";
@@ -17,6 +18,7 @@ export default function Home() {
         <TestimonialsSection />
         <FinalCtaSection />
       </main>
+      <BackToTop />
       <SiteFooter />
     </div>
   );
