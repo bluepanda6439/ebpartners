@@ -5,7 +5,7 @@ export function FinalCtaSection() {
   return (
     <section
       id="kontakt"
-      className="section-shell section-fade border-b border-border bg-surface py-20"
+      className="section-shell section-fade border-b border-border bg-surface py-14 md:py-20"
     >
       <Container className="grid gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-start">
         <div className="space-y-4">

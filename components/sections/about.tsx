@@ -36,7 +36,7 @@ export function AboutSection() {
   return (
     <section
       id="o-firmie"
-      className="section-shell section-fade overflow-hidden border-b border-border bg-surface py-24"
+      className="section-shell section-fade overflow-hidden border-b border-border bg-surface py-16 md:py-24"
     >
       <Container>
         <div className="mb-12 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">

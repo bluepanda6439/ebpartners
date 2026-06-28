@@ -80,7 +80,7 @@ export function ProcessSection({
       <div className="glow-orb left-[10%] top-36 bg-gold/18" />
       <div className="glow-orb right-[12%] top-64 bg-forest-soft/16 delay-300" />
       <Container className="relative z-10">
-        <div className="flex min-h-[58vh] flex-col items-center justify-center space-y-5 py-20 text-center md:min-h-[60vh]">
+        <div className="flex min-h-[52vh] flex-col items-center justify-center space-y-5 py-14 text-center md:min-h-[60vh] md:py-20">
           <p
             className={`text-base font-semibold uppercase tracking-[0.32em] text-gold-soft transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:text-xl ${
               hasEntered
