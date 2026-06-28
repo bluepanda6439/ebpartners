@@ -5,7 +5,7 @@ import { assetPath } from "@/lib/asset-path";
 
 export function HeroSection() {
   return (
-    <section className="section-shell section-fade border-b border-border bg-surface py-20 md:py-28">
+    <section className="section-shell section-fade border-b border-border bg-surface py-14 md:py-28">
       <Container className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div className="space-y-6">
           <p className="text-sm uppercase tracking-[0.22em] text-gold">

@@ -10,7 +10,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="opinie"
-      className="section-shell section-fade border-b border-border bg-surface py-20"
+      className="section-shell section-fade border-b border-border bg-surface py-14 md:py-20"
     >
       <Container>
         <div className="mb-10 space-y-4">

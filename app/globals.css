@@ -143,14 +143,6 @@ main section {
   animation: glowPulse 8s ease-in-out infinite;
 }
 
-.faq-item:hover .faq-answer,
-.faq-item:focus .faq-answer,
-.faq-item:focus-within .faq-answer {
-  margin-top: 1rem;
-  max-height: 12rem;
-  opacity: 1;
-}
-
 @supports (animation-timeline: view()) {
   .reveal-on-scroll,
   .image-reveal {

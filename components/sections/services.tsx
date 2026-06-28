@@ -16,7 +16,7 @@ export function ServicesSection({ audience }: ServicesSectionProps) {
   return (
     <section
       id="uslugi"
-      className="section-fade relative isolate overflow-hidden border-b border-border bg-background py-24"
+      className="section-fade relative isolate overflow-hidden border-b border-border bg-background py-16 md:py-24"
     >
       <Image
         src={reviewDocsImage}
