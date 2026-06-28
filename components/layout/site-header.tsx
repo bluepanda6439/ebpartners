@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+import { assetPath } from "@/lib/asset-path";
 import type { AudienceKey } from "@/lib/site-data";
 
 const clientNavItems: Array<{
@@ -135,7 +136,7 @@ export function SiteHeader() {
           <a href="#" className="w-full shrink-0 md:w-[47%]" aria-label="EB Partners">
             <span className="relative block h-[23vh] w-full max-w-[660px] overflow-hidden">
               <Image
-                src="/loga/logo-na-strone.png"
+                src={assetPath("/loga/logo-na-strone.png")}
                 alt="EB Partners"
                 fill
                 priority
@@ -166,7 +167,7 @@ export function SiteHeader() {
           >
             <span className="relative block h-[9.6vh] min-h-[68px] w-[90px] max-h-[92px] overflow-hidden md:w-[118px]">
               <Image
-                src="/loga/logo-green-transparent.png"
+                src={assetPath("/loga/logo-green-transparent.png")}
                 alt="EB Partners"
                 fill
                 priority

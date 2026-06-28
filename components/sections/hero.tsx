@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
+import { assetPath } from "@/lib/asset-path";
 
 export function HeroSection() {
   return (
@@ -43,7 +44,7 @@ export function HeroSection() {
           <div className="grid gap-4 sm:grid-cols-2">
             <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08]">
               <Image
-                src="/loga/ewe.jpeg"
+                src={assetPath("/loga/ewe.jpeg")}
                 alt="Ewa z zespołu EB Partners"
                 fill
                 unoptimized
@@ -57,7 +58,7 @@ export function HeroSection() {
             </figure>
             <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08]">
               <Image
-                src="/loga/benna.png"
+                src={assetPath("/loga/benna.png")}
                 alt="Benna z zespołu EB Partners"
                 fill
                 unoptimized

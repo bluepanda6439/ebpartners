@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
+import { assetPath } from "@/lib/asset-path";
 
 const teamMembers = [
   {
@@ -62,7 +63,7 @@ export function AboutSection() {
             >
               <figure className="relative z-10 h-[360px] w-full overflow-hidden bg-forest transition-[width] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:absolute md:inset-y-0 md:left-0 md:h-auto md:w-[38%] md:group-hover:w-full md:group-focus-within:w-full">
                 <Image
-                  src={member.image}
+                  src={assetPath(member.image)}
                   alt={member.imageAlt}
                   fill
                   unoptimized
