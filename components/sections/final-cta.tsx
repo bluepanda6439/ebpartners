@@ -9,10 +9,10 @@ export function FinalCtaSection() {
     >
       <Container className="grid gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-start">
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold">
+          <p className="text-sm uppercase tracking-[0.2em] text-gold">
             Kontakt
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl">
+          <h2 className="font-serif text-2xl md:text-4xl">
             Końcowe wezwanie do działania
           </h2>
           <p className="text-muted">

@@ -1,10 +1,8 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { AboutSection } from "@/components/sections/about";
-import { FaqSection } from "@/components/sections/faq";
+import { AudienceFlow } from "@/components/sections/audience-flow";
 import { FinalCtaSection } from "@/components/sections/final-cta";
 import { HeroSection } from "@/components/sections/hero";
-import { ProcessSection } from "@/components/sections/process";
-import { ServicesSection } from "@/components/sections/services";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 
@@ -14,10 +12,8 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <FaqSection />
-        <ServicesSection />
+        <AudienceFlow />
         <AboutSection />
-        <ProcessSection />
         <TestimonialsSection />
         <FinalCtaSection />
       </main>
