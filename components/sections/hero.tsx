@@ -7,35 +7,37 @@ export function HeroSection() {
     <section className="section-shell section-fade border-b border-border bg-surface py-20 md:py-28">
       <Container className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div className="space-y-6">
-          <p className="text-xs uppercase tracking-[0.22em] text-gold">
+          <p className="text-sm uppercase tracking-[0.22em] text-gold">
             Legalizacja pobytu i doradztwo prawne
           </p>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight text-foreground md:text-6xl">
-            Prawo, które stawia klienta w centrum.
+            Bridging the gap between foreign nationals and the Polish legal
+            system.
           </h1>
           <p className="max-w-xl text-base leading-8 text-muted md:text-lg">
-            Prowadzimy sprawy legalizacji pobytu i pracy z uważnością,
-            przejrzystością i pełnym poszanowaniem zasad etyki oraz zgodności z
-            prawem.
+            We help foreigners and companies navigate legal issues efficiently
+            and in compliance with the law. We explain the law coherently, act
+            as a bridge between you and the local authorities, and most
+            importantly, we keep your mind at ease.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
               href="#kontakt"
-              className="rounded-full bg-forest px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold hover:text-black"
+              className="rounded-full bg-forest px-8 py-4 text-base font-semibold text-white shadow-[0_18px_45px_-30px_rgba(12,52,39,0.8)] transition hover:bg-gold hover:text-black md:px-10"
             >
               Umów konsultację
             </a>
             <a
-              href="#uslugi"
-              className="rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:border-gold/50"
+              href="#o-firmie"
+              className="rounded-full border border-border bg-white px-8 py-4 text-base font-semibold text-foreground transition hover:border-gold/50 hover:text-forest md:px-10"
             >
-              Zobacz usługi
+              Poznaj nasz zespół
             </a>
           </div>
         </div>
         <div className="relative rounded-3xl border border-border bg-forest p-8 text-white">
           <div className="absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-gold-soft/80 to-transparent" />
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-gold-soft">
+          <p className="mb-4 text-sm uppercase tracking-[0.2em] text-gold-soft">
             Zespół EB Partners
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
