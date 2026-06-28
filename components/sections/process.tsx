@@ -126,7 +126,7 @@ export function ProcessSection({
           </div>
         </div>
         <article
-          className={`mx-auto mb-20 -mt-36 max-w-5xl overflow-hidden rounded-3xl border border-white/12 bg-surface text-foreground shadow-[0_26px_90px_-52px_rgba(0,0,0,0.9)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:-mt-44 ${
+          className={`mx-auto mb-20 -mt-20 max-w-5xl overflow-hidden rounded-3xl border border-white/12 bg-surface text-foreground shadow-[0_26px_90px_-52px_rgba(0,0,0,0.9)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:-mt-44 ${
             !shouldAnimate || hasEntered
               ? "translate-y-0 scale-100 opacity-100 blur-0 delay-500"
               : "translate-y-16 scale-[0.97] opacity-0 blur-sm"
