@@ -1,7 +1,4 @@
-import Image from "next/image";
-
 import { Container } from "@/components/layout/container";
-import { assetPath } from "@/lib/asset-path";
 
 export function HeroSection() {
   return (
@@ -36,40 +33,27 @@ export function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="relative rounded-3xl border border-border bg-forest p-8 text-white">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-forest p-8 text-white shadow-[0_28px_90px_-58px_rgba(12,52,39,0.92)]">
+          <div className="absolute -right-16 top-10 size-56 rounded-full bg-gold/12 blur-3xl" />
+          <div className="absolute -bottom-20 left-10 size-64 rounded-full bg-white/8 blur-3xl" />
           <div className="absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-gold-soft/80 to-transparent" />
-          <p className="mb-4 text-sm uppercase tracking-[0.2em] text-gold-soft">
+          <p className="relative mb-5 text-sm uppercase tracking-[0.2em] text-gold-soft">
             Zespół EB Partners
           </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08]">
-              <Image
-                src={assetPath("/loga/ewe.jpeg")}
-                alt="Ewa z zespołu EB Partners"
-                fill
-                unoptimized
-                sizes="(min-width: 768px) 18vw, 45vw"
-                className="z-0 object-cover"
-                style={{ objectPosition: "52% 44%" }}
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 to-transparent p-5 text-sm text-white">
-                Ewa
-              </figcaption>
-            </figure>
-            <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08]">
-              <Image
-                src={assetPath("/loga/benna.png")}
-                alt="Benna z zespołu EB Partners"
-                fill
-                unoptimized
-                sizes="(min-width: 768px) 18vw, 45vw"
-                className="z-0 object-cover"
-                style={{ objectPosition: "52% 42%" }}
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 to-transparent p-5 text-sm text-white">
-                Benna
-              </figcaption>
-            </figure>
+          <div className="relative grid gap-4 sm:grid-cols-2">
+            {["Ewelina Bojczuk", "Chido Bennadette Hanyani"].map((name) => (
+              <div
+                key={name}
+                className="rounded-2xl border border-white/12 bg-white/[0.08] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-soft">
+                  Co-Founder
+                </p>
+                <p className="mt-4 font-serif text-2xl leading-tight text-white">
+                  {name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
