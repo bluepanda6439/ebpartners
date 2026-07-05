@@ -71,7 +71,7 @@ export function ProcessSection({
           sizes="100vw"
           className="object-cover motion-safe:animate-[imageDrift_16s_ease-in-out_infinite_alternate]"
           style={{ objectPosition: "50% 56%" }}
-          priority={false}
+          priority
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,37,29,0.3)_0%,rgba(8,37,29,0.6)_42%,rgba(12,52,39,0.96)_74%,rgba(12,52,39,1)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(185,147,79,0.18),transparent_34%)]" />

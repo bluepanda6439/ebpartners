@@ -2,13 +2,6 @@
 
 import { useEffect } from "react";
 
-let activeAnimationFrame: number | null = null;
-let activeStartFrame: number | null = null;
-
-function easeOutQuad(progress: number) {
-  return 1 - (1 - progress) * (1 - progress);
-}
-
 function getScrollOffset() {
   const compactHeader = document.querySelector<HTMLElement>(
     "[data-scroll-header='compact']",
@@ -65,51 +58,12 @@ function scrollToHash(hash: string) {
     return;
   }
 
-  cancelActiveScroll();
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    target.scrollIntoView();
-    return;
-  }
-
-  activeStartFrame = window.requestAnimationFrame(() => {
-    activeStartFrame = null;
-
-    const start = window.scrollY;
-    const targetTop = getTargetScrollTop(target);
-    const distance = targetTop - start;
-    const duration = Math.min(980, Math.max(520, Math.abs(distance) * 0.42));
-    const startedAt = performance.now();
-
-    const animate = (now: number) => {
-      const elapsed = now - startedAt;
-      const progress = Math.min(elapsed / duration, 1);
-
-      window.scrollTo(0, start + distance * easeOutQuad(progress));
-
-      if (progress < 1) {
-        activeAnimationFrame = window.requestAnimationFrame(animate);
-        return;
-      }
-
-      window.scrollTo(0, targetTop);
-      activeAnimationFrame = null;
-    };
-
-    activeAnimationFrame = window.requestAnimationFrame(animate);
+  window.scrollTo({
+    top: getTargetScrollTop(target),
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
   });
-}
-
-function cancelActiveScroll() {
-  if (activeAnimationFrame !== null) {
-    window.cancelAnimationFrame(activeAnimationFrame);
-    activeAnimationFrame = null;
-  }
-
-  if (activeStartFrame !== null) {
-    window.cancelAnimationFrame(activeStartFrame);
-    activeStartFrame = null;
-  }
 }
 
 function handleAnchorClick(event: MouseEvent) {
@@ -138,7 +92,6 @@ export function SmoothAnchorScroll() {
     document.addEventListener("click", handleAnchorClick, { capture: true });
 
     return () => {
-      cancelActiveScroll();
       document.removeEventListener("click", handleAnchorClick, {
         capture: true,
       });
