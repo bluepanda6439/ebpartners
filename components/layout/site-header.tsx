@@ -137,21 +137,50 @@ function HeaderNav({
 
 export function SiteHeader() {
   const largeHeaderRef = useRef<HTMLElement>(null);
+  const frameRef = useRef<number | null>(null);
+  const showCompactRef = useRef(false);
+  const thresholdRef = useRef(180);
   const [showCompact, setShowCompact] = useState(false);
 
   useEffect(() => {
     const updateHeader = () => {
-      const threshold = largeHeaderRef.current?.offsetHeight ?? 180;
-      setShowCompact(window.scrollY > threshold - 24);
+      const nextShowCompact = window.scrollY > thresholdRef.current - 24;
+
+      if (showCompactRef.current === nextShowCompact) {
+        return;
+      }
+
+      showCompactRef.current = nextShowCompact;
+      setShowCompact(nextShowCompact);
     };
 
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-    window.addEventListener("resize", updateHeader);
+    const updateThreshold = () => {
+      thresholdRef.current = largeHeaderRef.current?.offsetHeight ?? 180;
+      updateHeader();
+    };
+
+    const scheduleHeaderUpdate = () => {
+      if (frameRef.current !== null) {
+        return;
+      }
+
+      frameRef.current = window.requestAnimationFrame(() => {
+        frameRef.current = null;
+        updateHeader();
+      });
+    };
+
+    updateThreshold();
+    window.addEventListener("scroll", scheduleHeaderUpdate, { passive: true });
+    window.addEventListener("resize", updateThreshold);
 
     return () => {
-      window.removeEventListener("scroll", updateHeader);
-      window.removeEventListener("resize", updateHeader);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+
+      window.removeEventListener("scroll", scheduleHeaderUpdate);
+      window.removeEventListener("resize", updateThreshold);
     };
   }, []);
 

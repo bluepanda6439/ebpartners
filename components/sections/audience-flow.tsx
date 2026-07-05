@@ -4,17 +4,25 @@ import { FaqSection } from "@/components/sections/faq";
 import { ProcessSection } from "@/components/sections/process";
 import { ServicesSection } from "@/components/sections/services";
 import type { AudienceKey } from "@/lib/site-data";
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 
 export function AudienceFlow() {
   const [audience, setAudience] = useState<AudienceKey>("individual");
+
+  const updateAudience = (nextAudience: AudienceKey) => {
+    startTransition(() => {
+      setAudience(nextAudience);
+    });
+  };
 
   useEffect(() => {
     const handleAudienceChange = (event: Event) => {
       const nextAudience = (event as CustomEvent<AudienceKey>).detail;
 
       if (nextAudience === "individual" || nextAudience === "business") {
-        setAudience(nextAudience);
+        startTransition(() => {
+          setAudience(nextAudience);
+        });
       }
     };
 
@@ -26,7 +34,7 @@ export function AudienceFlow() {
 
   return (
     <>
-      <ProcessSection audience={audience} onAudienceChange={setAudience} />
+      <ProcessSection audience={audience} onAudienceChange={updateAudience} />
       <FaqSection audience={audience} />
       <ServicesSection audience={audience} />
     </>
