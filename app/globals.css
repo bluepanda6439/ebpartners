@@ -159,6 +159,26 @@ body.is-anchor-scrolling .soft-float {
   transform: none !important;
 }
 
+[data-anchor-scroll-stable="true"].section-fade,
+[data-anchor-scroll-stable="true"] .section-fade,
+[data-anchor-scroll-stable="true"].reveal-on-scroll,
+[data-anchor-scroll-stable="true"] .reveal-on-scroll,
+[data-anchor-scroll-stable="true"].image-reveal,
+[data-anchor-scroll-stable="true"] .image-reveal,
+[data-anchor-scroll-stable="true"].soft-float,
+[data-anchor-scroll-stable="true"] .soft-float {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-anchor-scroll-stable="true"].image-reveal,
+[data-anchor-scroll-stable="true"] .image-reveal,
+[data-anchor-scroll-stable="true"].soft-float,
+[data-anchor-scroll-stable="true"] .soft-float {
+  clip-path: inset(0 0 0 0 round 1rem) !important;
+}
+
 @supports (animation-timeline: view()) {
   .reveal-on-scroll,
   .image-reveal {
