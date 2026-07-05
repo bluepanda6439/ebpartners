@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 let activeAnimationFrame: number | null = null;
+let activeStartFrame: number | null = null;
 
 function easeOutQuad(progress: number) {
   return 1 - (1 - progress) * (1 - progress);
@@ -44,6 +45,12 @@ function getTargetScrollTop(target: Element) {
 
   const rect = target.getBoundingClientRect();
   const sectionTop = rect.top + window.scrollY;
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+  if (isMobile) {
+    return clampScrollPosition(sectionTop - getScrollOffset());
+  }
+
   const sectionBottom = rect.bottom + window.scrollY;
   const topAligned = sectionTop - getScrollOffset();
   const bottomAligned = sectionBottom - window.innerHeight + 24;
@@ -58,37 +65,51 @@ function scrollToHash(hash: string) {
     return;
   }
 
-  if (activeAnimationFrame !== null) {
-    window.cancelAnimationFrame(activeAnimationFrame);
-  }
+  cancelActiveScroll();
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     target.scrollIntoView();
     return;
   }
 
-  const start = window.scrollY;
-  const targetTop = getTargetScrollTop(target);
-  const distance = targetTop - start;
-  const duration = Math.min(980, Math.max(520, Math.abs(distance) * 0.42));
-  const startedAt = performance.now();
+  activeStartFrame = window.requestAnimationFrame(() => {
+    activeStartFrame = null;
 
-  const animate = (now: number) => {
-    const elapsed = now - startedAt;
-    const progress = Math.min(elapsed / duration, 1);
+    const start = window.scrollY;
+    const targetTop = getTargetScrollTop(target);
+    const distance = targetTop - start;
+    const duration = Math.min(980, Math.max(520, Math.abs(distance) * 0.42));
+    const startedAt = performance.now();
 
-    window.scrollTo(0, start + distance * easeOutQuad(progress));
+    const animate = (now: number) => {
+      const elapsed = now - startedAt;
+      const progress = Math.min(elapsed / duration, 1);
 
-    if (progress < 1) {
-      activeAnimationFrame = window.requestAnimationFrame(animate);
-      return;
-    }
+      window.scrollTo(0, start + distance * easeOutQuad(progress));
 
-    window.scrollTo(0, targetTop);
+      if (progress < 1) {
+        activeAnimationFrame = window.requestAnimationFrame(animate);
+        return;
+      }
+
+      window.scrollTo(0, targetTop);
+      activeAnimationFrame = null;
+    };
+
+    activeAnimationFrame = window.requestAnimationFrame(animate);
+  });
+}
+
+function cancelActiveScroll() {
+  if (activeAnimationFrame !== null) {
+    window.cancelAnimationFrame(activeAnimationFrame);
     activeAnimationFrame = null;
-  };
+  }
 
-  activeAnimationFrame = window.requestAnimationFrame(animate);
+  if (activeStartFrame !== null) {
+    window.cancelAnimationFrame(activeStartFrame);
+    activeStartFrame = null;
+  }
 }
 
 function handleAnchorClick(event: MouseEvent) {
@@ -117,6 +138,7 @@ export function SmoothAnchorScroll() {
     document.addEventListener("click", handleAnchorClick, { capture: true });
 
     return () => {
+      cancelActiveScroll();
       document.removeEventListener("click", handleAnchorClick, {
         capture: true,
       });
