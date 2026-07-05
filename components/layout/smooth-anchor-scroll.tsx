@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 let anchorScrollTimeout: number | null = null;
 let anchorScrollAnimation: number | null = null;
+const stableAnchorTargets = new Set<Element>();
 
 function getScrollOffset() {
   const compactHeader = document.querySelector<HTMLElement>(
@@ -115,6 +116,15 @@ function animateScrollTo(targetTop: number) {
   anchorScrollAnimation = window.requestAnimationFrame(step);
 }
 
+function stabilizeAnchorTarget(target: Element) {
+  if (target === document.body) {
+    return;
+  }
+
+  target.setAttribute("data-anchor-scroll-stable", "true");
+  stableAnchorTargets.add(target);
+}
+
 function scrollToHash(hash: string) {
   const target = hash === "#" ? document.body : document.querySelector(hash);
 
@@ -123,6 +133,7 @@ function scrollToHash(hash: string) {
   }
 
   const targetTop = getTargetScrollTop(target);
+  stabilizeAnchorTarget(target);
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     cancelAnchorScrollAnimation();
@@ -161,6 +172,10 @@ export function SmoothAnchorScroll() {
     return () => {
       cancelAnchorScrollAnimation();
       clearAnchorScrollState();
+      stableAnchorTargets.forEach((target) => {
+        target.removeAttribute("data-anchor-scroll-stable");
+      });
+      stableAnchorTargets.clear();
       document.removeEventListener("click", handleAnchorClick, {
         capture: true,
       });
