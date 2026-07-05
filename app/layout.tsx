@@ -3,7 +3,22 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "EB Partners | Doradztwo prawne",
-  description: "Strona EB Partners z elegancką, zielono-złotą identyfikacją wizualną.",
+  description:
+    "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+  openGraph: {
+    title: "EB Partners | Doradztwo prawne",
+    description:
+      "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+    siteName: "EB Partners",
+    locale: "pl_PL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "EB Partners | Doradztwo prawne",
+    description:
+      "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+  },
 };
 
 export default function RootLayout({
