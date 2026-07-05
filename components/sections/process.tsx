@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { Container } from "@/components/layout/container";
-import agreementImage from "@/images/agreement.jpg";
+import { assetPath } from "@/lib/asset-path";
 import { processGroups, type AudienceKey } from "@/lib/site-data";
 
 type ProcessSectionProps = {
@@ -65,7 +65,7 @@ export function ProcessSection({
     >
       <div className="absolute inset-x-0 top-0 h-[76vh] min-h-[640px]">
         <Image
-          src={agreementImage}
+          src={assetPath("/images/agreement.jpg")}
           alt="Handshake symbolizing agreement and trusted cooperation"
           fill
           sizes="100vw"
