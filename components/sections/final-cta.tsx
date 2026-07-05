@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/sections/contact-form";
-import contactBackground from "@/images/wroclaw tlo kontakt.jpg";
+import contactBackground from "@/images/wroclaw-contact-bg.jpg";
 import {
   contactEmail,
   contactLocation,

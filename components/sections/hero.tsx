@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
-import heroBackground from "@/images/wroclaw tlo kontakt.jpg";
+import heroBackground from "@/images/wroclaw-contact-bg.jpg";
 
 export function HeroSection() {
   return (
