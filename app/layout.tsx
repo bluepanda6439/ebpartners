@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EB Partners | Legalizacja pobytu",
+  title: "EB Partners | Doradztwo prawne",
   description: "Strona EB Partners z elegancką, zielono-złotą identyfikacją wizualną.",
 };
 
