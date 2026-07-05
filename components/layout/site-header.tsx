@@ -59,7 +59,7 @@ function ClientDropdown({
       <a
         href="#proces"
         onClick={() => selectAudience(audience)}
-        className={`inline-flex min-h-8 items-center rounded-full leading-none transition hover:text-gold md:min-h-10 ${
+        className={`inline-flex min-h-8 max-w-[9.5rem] items-center rounded-full text-center leading-tight transition hover:text-gold md:min-h-10 ${
           compact ? "px-1.5 py-1.5 md:px-2 md:py-2" : "px-1.5 py-1.5 md:px-1 md:py-2"
         }`}
       >
@@ -89,8 +89,8 @@ function ContactCta({ compact = false }: { compact?: boolean }) {
       href="#kontakt"
       className={`inline-flex min-h-8 shrink-0 items-center rounded-full bg-gold font-semibold leading-none text-black transition hover:bg-white md:min-h-10 ${
         compact
-          ? "px-3 py-1.5 text-[0.68rem] md:px-4 md:py-2 md:text-lg"
-          : "px-3 py-2 text-xs md:px-4 md:py-2 md:text-base lg:text-lg"
+          ? "px-3 py-1.5 text-xs md:px-4 md:py-2 md:text-xl"
+          : "px-3 py-2 text-sm md:px-4 md:py-2 md:text-lg lg:text-xl"
       }`}
     >
       Skontaktuj się
@@ -109,8 +109,8 @@ function HeaderNav({
     <nav
       className={`flex items-center text-white/[0.84] ${
         compact
-          ? "flex-nowrap justify-center gap-x-1.5 text-[0.68rem] md:gap-x-4 md:text-lg"
-          : "flex-wrap justify-center gap-x-2 gap-y-2 text-xs md:flex-nowrap md:justify-start md:gap-x-4 md:text-base lg:text-lg"
+          ? "flex-nowrap justify-center gap-x-1.5 text-xs md:gap-x-4 md:text-xl"
+          : "flex-wrap justify-center gap-x-2 gap-y-2 text-sm md:flex-nowrap md:justify-start md:gap-x-3 md:text-lg lg:text-xl"
       }`}
     >
       {clientNavItems.map((item) => (
@@ -124,7 +124,7 @@ function HeaderNav({
       ))}
       <a
         href="#o-firmie"
-        className={`inline-flex min-h-8 items-center rounded-full leading-none transition hover:text-gold md:min-h-10 ${
+        className={`inline-flex min-h-8 items-center rounded-full text-center leading-tight transition hover:text-gold md:min-h-10 ${
           compact ? "px-1.5 py-1.5 md:px-2 md:py-2" : "px-1.5 py-1.5 md:px-1 md:py-2"
         }`}
       >
@@ -187,6 +187,7 @@ export function SiteHeader() {
       </header>
 
       <header
+        data-scroll-header="compact"
         className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-forest/96 text-white shadow-[0_18px_45px_-34px_rgba(0,0,0,0.65)] backdrop-blur-md transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           showCompact
             ? "translate-y-0 opacity-100"
