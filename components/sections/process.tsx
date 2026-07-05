@@ -69,7 +69,7 @@ export function ProcessSection({
           alt="Handshake symbolizing agreement and trusted cooperation"
           fill
           sizes="100vw"
-          className="object-cover motion-safe:animate-[imageDrift_16s_ease-in-out_infinite_alternate]"
+          className="object-cover"
           style={{ objectPosition: "50% 56%" }}
           priority
         />
