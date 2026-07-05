@@ -23,11 +23,11 @@ export function ServicesSection({ audience }: ServicesSectionProps) {
         alt="Reviewing documents together during a legal consultation"
         fill
         sizes="100vw"
-        className="object-cover opacity-75 motion-safe:animate-[imageDrift_18s_ease-in-out_infinite_alternate]"
+        className="object-cover opacity-92 motion-safe:animate-[imageDrift_18s_ease-in-out_infinite_alternate]"
         style={{ objectPosition: "56% 50%" }}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,rgba(248,246,241,0.94)_36%,rgba(248,246,241,0.46)_66%,rgba(12,52,39,0.1)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,rgba(248,246,241,0.28)_18%,rgba(248,246,241,0.52)_78%,var(--background)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,246,241,0.82)_0%,rgba(248,246,241,0.58)_36%,rgba(248,246,241,0.24)_66%,rgba(12,52,39,0.08)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,246,241,0.62)_0%,rgba(207,178,125,0.14)_22%,rgba(248,246,241,0.3)_78%,var(--background)_100%)]" />
       <Container className="relative z-10">
         <div className="reveal-on-scroll mb-10 max-w-3xl">
           <p className="text-base font-semibold uppercase tracking-[0.32em] text-gold md:text-xl">
