@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { contactEmail, contactPhones } from "@/lib/contact-data";
 
 export function SiteFooter() {
   return (
@@ -6,8 +7,10 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-semibold text-white">EB Partners</p>
-          <p>ul. [adres], [kod] [miasto]</p>
-          <p>+48 [telefon] | [email]</p>
+          <p>
+            {contactPhones.map((contact) => contact.phone).join(" | ")}
+          </p>
+          <p>{contactEmail}</p>
         </div>
         <p>© {new Date().getFullYear()} EB Partners</p>
       </Container>

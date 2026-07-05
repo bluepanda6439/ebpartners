@@ -46,3 +46,8 @@ Przy kolejnym powrocie do projektu zapytac, czy realizujemy ktorys z ponizszych 
    - Wymusic co najmniej 1 approval.
    - Wylaczyc force push i usuwanie brancha `main`.
    - Ograniczyc kto moze pushowac bezposrednio do `main`.
+
+9. Przywrocic i dopracowac sekcje opinii klientow:
+   - Sekcja `Opinie klientow` zostala tymczasowo ukryta.
+   - Docelowo dodac realne opinie / rekomendacje Google.
+   - Zaprojektowac ja tak, zeby nie tworzyla zbyt duzego odstepu przed kontaktem.
