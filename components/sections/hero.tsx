@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
-import heroBackground from "@/images/wroclaw-contact-bg.jpg";
+import { assetPath } from "@/lib/asset-path";
 
 export function HeroSection() {
   return (
     <section className="section-fade relative isolate overflow-hidden border-b border-border bg-surface pb-14 pt-8 md:pb-28 md:pt-16">
       <div className="absolute inset-0 z-0">
         <Image
-          src={heroBackground}
+          src={assetPath("/images/wroclaw-contact-bg.jpg")}
           alt=""
           fill
           priority

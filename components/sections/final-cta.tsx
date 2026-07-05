@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/sections/contact-form";
-import contactBackground from "@/images/wroclaw-contact-bg.jpg";
+import { assetPath } from "@/lib/asset-path";
 import {
   contactEmail,
   contactLocation,
@@ -17,7 +17,7 @@ export function FinalCtaSection() {
     >
       <div className="absolute inset-x-0 top-0 z-0 h-[82%] min-h-[820px] overflow-hidden">
         <Image
-          src={contactBackground}
+          src={assetPath("/images/wroclaw-contact-bg.jpg")}
           alt=""
           fill
           sizes="100vw"
