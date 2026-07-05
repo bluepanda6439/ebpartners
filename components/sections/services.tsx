@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
-import reviewDocsImage from "@/images/review-docs-together.jpg";
+import { assetPath } from "@/lib/asset-path";
 import { serviceGroups, type AudienceKey } from "@/lib/site-data";
 
 type ServicesSectionProps = {
@@ -19,7 +19,7 @@ export function ServicesSection({ audience }: ServicesSectionProps) {
       className="section-fade relative isolate overflow-hidden border-b border-border bg-background py-16 md:py-24"
     >
       <Image
-        src={reviewDocsImage}
+        src={assetPath("/images/review-docs-together.jpg")}
         alt="Reviewing documents together during a legal consultation"
         fill
         sizes="100vw"
