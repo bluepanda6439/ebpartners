@@ -1,4 +1,5 @@
 import { BackToTop } from "@/components/layout/back-to-top";
+import { SmoothAnchorScroll } from "@/components/layout/smooth-anchor-scroll";
 import { SiteHeader } from "@/components/layout/site-header";
 import { AboutSection } from "@/components/sections/about";
 import { AudienceFlow } from "@/components/sections/audience-flow";
@@ -16,6 +17,7 @@ export default function Home() {
         <AboutSection />
         <FinalCtaSection />
       </main>
+      <SmoothAnchorScroll />
       <BackToTop />
       <SiteFooter />
     </div>

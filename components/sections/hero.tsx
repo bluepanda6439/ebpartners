@@ -1,36 +1,55 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
+import heroBackground from "@/images/wroclaw tlo kontakt.jpg";
 
 export function HeroSection() {
   return (
-    <section className="section-shell section-fade border-b border-border bg-surface py-14 md:py-28">
-      <Container className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+    <section className="section-fade relative isolate overflow-hidden border-b border-border bg-surface pb-14 pt-8 md:pb-28 md:pt-16">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroBackground}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-94"
+          style={{ objectPosition: "center 30%" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,246,241,0.44)_0%,rgba(248,246,241,0.27)_46%,rgba(248,246,241,0.09)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,246,241,0.04)_0%,rgba(207,178,125,0.2)_66%,rgba(242,239,232,0.98)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(185,147,79,0.14),transparent_30%)]" />
+      </div>
+      <Container className="relative z-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div className="space-y-6">
-          <p className="text-sm uppercase tracking-[0.22em] text-gold">
+          <p className="text-base font-semibold uppercase tracking-[0.24em] text-gold md:text-xl">
             Legalizacja pobytu i doradztwo prawne
           </p>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight text-foreground md:text-6xl">
             Bridging the gap between foreign nationals and the Polish legal
             system.
           </h1>
-          <p className="max-w-xl text-base leading-8 text-muted md:text-lg">
-            We help foreigners and companies navigate legal issues efficiently
-            and in compliance with the law. We explain the law coherently, act
-            as a bridge between you and the local authorities, and most
-            importantly, we keep your mind at ease.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="#proces"
-              className="rounded-full bg-forest px-8 py-4 text-base font-semibold text-white shadow-[0_18px_45px_-30px_rgba(12,52,39,0.8)] transition hover:bg-gold hover:text-black md:px-10"
-            >
-              Select your path
-            </a>
-            <a
-              href="#o-firmie"
-              className="rounded-full border border-border bg-white px-8 py-4 text-base font-semibold text-foreground transition hover:border-gold/50 hover:text-forest md:px-10"
-            >
-              Poznaj nasz zespół
-            </a>
+          <div className="max-w-2xl rounded-[2rem] border border-gold/22 bg-[linear-gradient(180deg,#fffdf8_0%,#f5f0e6_100%)] p-5 text-foreground shadow-[0_30px_95px_-62px_rgba(0,0,0,0.62)] md:p-7">
+            <p className="text-base leading-8 text-muted md:text-lg">
+              We help foreigners and companies navigate legal issues efficiently
+              and in compliance with the law. We explain the law coherently, act
+              as a bridge between you and the local authorities, and most
+              importantly, we keep your mind at ease.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#proces"
+                className="rounded-full bg-forest px-8 py-4 text-base font-semibold text-white shadow-[0_18px_45px_-30px_rgba(12,52,39,0.8)] transition hover:bg-gold hover:text-black md:px-10"
+              >
+                Select your path
+              </a>
+              <a
+                href="#o-firmie"
+                className="rounded-full border border-border bg-white px-8 py-4 text-base font-semibold text-foreground transition hover:border-gold/50 hover:text-forest md:px-10"
+              >
+                Poznaj nasz zespół
+              </a>
+            </div>
           </div>
         </div>
         <div className="relative overflow-hidden rounded-3xl border border-border bg-forest p-8 text-white shadow-[0_28px_90px_-58px_rgba(12,52,39,0.92)]">
