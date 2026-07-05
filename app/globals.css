@@ -143,6 +143,22 @@ main section {
   animation: glowPulse 8s ease-in-out infinite;
 }
 
+body.is-anchor-scrolling .section-fade,
+body.is-anchor-scrolling .reveal-on-scroll,
+body.is-anchor-scrolling .image-reveal,
+body.is-anchor-scrolling .soft-float,
+body.is-anchor-scrolling .glow-orb,
+body.is-anchor-scrolling [class*="imageDrift"] {
+  animation: none !important;
+}
+
+body.is-anchor-scrolling .reveal-on-scroll,
+body.is-anchor-scrolling .image-reveal,
+body.is-anchor-scrolling .soft-float {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @supports (animation-timeline: view()) {
   .reveal-on-scroll,
   .image-reveal {
