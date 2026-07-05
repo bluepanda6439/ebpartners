@@ -2,13 +2,8 @@
 
 import { useEffect } from "react";
 
-let activeAnimationFrame: number | null = null;
-
-function easeInOutCubic(progress: number) {
-  return progress < 0.5
-    ? 4 * progress * progress * progress
-    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-}
+let anchorScrollTimeout: number | null = null;
+let anchorScrollAnimation: number | null = null;
 
 function getScrollOffset() {
   const compactHeader = document.querySelector<HTMLElement>(
@@ -60,48 +55,64 @@ function getTargetScrollTop(target: Element) {
   return clampScrollPosition(centeredInViewport);
 }
 
-function cancelActiveScroll() {
-  if (activeAnimationFrame !== null) {
-    window.cancelAnimationFrame(activeAnimationFrame);
-    activeAnimationFrame = null;
+function clearAnchorScrollState() {
+  document.body.classList.remove("is-anchor-scrolling");
+
+  if (anchorScrollTimeout !== null) {
+    window.clearTimeout(anchorScrollTimeout);
+    anchorScrollTimeout = null;
   }
 }
 
-function animateScrollTo(targetTop: number) {
-  cancelActiveScroll();
+function setAnchorScrollState(duration = 900) {
+  clearAnchorScrollState();
+  document.body.classList.add("is-anchor-scrolling");
+  anchorScrollTimeout = window.setTimeout(clearAnchorScrollState, duration);
+}
 
-  const start = window.scrollY;
-  const distance = targetTop - start;
+function cancelAnchorScrollAnimation() {
+  if (anchorScrollAnimation !== null) {
+    window.cancelAnimationFrame(anchorScrollAnimation);
+    anchorScrollAnimation = null;
+  }
+}
+
+function easeOutQuad(progress: number) {
+  return 1 - (1 - progress) * (1 - progress);
+}
+
+function animateScrollTo(targetTop: number) {
+  cancelAnchorScrollAnimation();
+
+  const startTop = window.scrollY;
+  const distance = targetTop - startTop;
 
   if (Math.abs(distance) < 2) {
     window.scrollTo(0, targetTop);
     return;
   }
 
-  const duration = Math.min(1450, Math.max(900, Math.abs(distance) * 0.48));
-  let animatedElapsed = 0;
-  let previousFrameTime = performance.now();
+  const duration = Math.min(760, Math.max(360, Math.abs(distance) * 0.18));
+  const startedAt = window.performance.now();
 
-  const animate = (now: number) => {
-    const frameDelta = Math.min(now - previousFrameTime, 34);
-    previousFrameTime = now;
-    animatedElapsed += frameDelta;
+  setAnchorScrollState(duration + 180);
 
-    const progress = Math.min(animatedElapsed / duration, 1);
-    const easedProgress = easeInOutCubic(progress);
+  function step(now: number) {
+    const progress = Math.min((now - startedAt) / duration, 1);
+    const easedProgress = easeOutQuad(progress);
 
-    window.scrollTo(0, start + distance * easedProgress);
+    window.scrollTo(0, startTop + distance * easedProgress);
 
     if (progress < 1) {
-      activeAnimationFrame = window.requestAnimationFrame(animate);
+      anchorScrollAnimation = window.requestAnimationFrame(step);
       return;
     }
 
     window.scrollTo(0, targetTop);
-    activeAnimationFrame = null;
-  };
+    anchorScrollAnimation = null;
+  }
 
-  activeAnimationFrame = window.requestAnimationFrame(animate);
+  anchorScrollAnimation = window.requestAnimationFrame(step);
 }
 
 function scrollToHash(hash: string) {
@@ -114,6 +125,7 @@ function scrollToHash(hash: string) {
   const targetTop = getTargetScrollTop(target);
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    cancelAnchorScrollAnimation();
     window.scrollTo(0, targetTop);
     return;
   }
@@ -147,7 +159,8 @@ export function SmoothAnchorScroll() {
     document.addEventListener("click", handleAnchorClick, { capture: true });
 
     return () => {
-      cancelActiveScroll();
+      cancelAnchorScrollAnimation();
+      clearAnchorScrollState();
       document.removeEventListener("click", handleAnchorClick, {
         capture: true,
       });
