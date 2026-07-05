@@ -52,11 +52,12 @@ function getTargetScrollTop(target: Element) {
     return clampScrollPosition(sectionTop - getScrollOffset());
   }
 
-  const sectionBottom = rect.bottom + window.scrollY;
-  const topAligned = sectionTop - getScrollOffset();
-  const bottomAligned = sectionBottom - window.innerHeight + 24;
+  const scrollOffset = getScrollOffset();
+  const availableHeight = window.innerHeight - scrollOffset;
+  const centeredInViewport =
+    sectionTop - scrollOffset - (availableHeight - rect.height) / 2;
 
-  return clampScrollPosition(Math.max(topAligned, bottomAligned));
+  return clampScrollPosition(centeredInViewport);
 }
 
 function cancelActiveScroll() {
