@@ -83,13 +83,34 @@ function ClientDropdown({
   );
 }
 
-function HeaderNav({ compact = false }: { compact?: boolean }) {
+function ContactCta({ compact = false }: { compact?: boolean }) {
+  return (
+    <a
+      href="#kontakt"
+      className={`inline-flex min-h-8 shrink-0 items-center rounded-full bg-gold font-semibold leading-none text-black transition hover:bg-white md:min-h-10 ${
+        compact
+          ? "px-3 py-1.5 text-[0.68rem] md:px-4 md:py-2 md:text-lg"
+          : "px-3 py-2 text-xs md:px-4 md:py-2 md:text-base lg:text-lg"
+      }`}
+    >
+      Skontaktuj się
+    </a>
+  );
+}
+
+function HeaderNav({
+  compact = false,
+  showContact = true,
+}: {
+  compact?: boolean;
+  showContact?: boolean;
+}) {
   return (
     <nav
       className={`flex items-center text-white/[0.84] ${
         compact
           ? "flex-nowrap justify-center gap-x-1.5 text-[0.68rem] md:gap-x-4 md:text-lg"
-          : "flex-wrap justify-center gap-x-2 gap-y-2 text-xs md:justify-start md:gap-x-5 md:text-lg lg:text-xl"
+          : "flex-wrap justify-center gap-x-2 gap-y-2 text-xs md:flex-nowrap md:justify-start md:gap-x-4 md:text-base lg:text-lg"
       }`}
     >
       {clientNavItems.map((item) => (
@@ -109,14 +130,7 @@ function HeaderNav({ compact = false }: { compact?: boolean }) {
       >
         O nas
       </a>
-      <a
-        href="#kontakt"
-        className={`inline-flex min-h-8 items-center rounded-full leading-none transition hover:text-gold md:min-h-10 ${
-          compact ? "px-1.5 py-1.5 md:px-2 md:py-2" : "px-1.5 py-1.5 md:px-1 md:py-2"
-        }`}
-      >
-        Kontakt
-      </a>
+      {showContact ? <ContactCta compact={compact} /> : null}
     </nav>
   );
 }
@@ -147,10 +161,10 @@ export function SiteHeader() {
         ref={largeHeaderRef}
         className="border-b border-white/10 bg-forest text-white shadow-[0_18px_45px_-34px_rgba(0,0,0,0.65)]"
       >
-        <div className="mx-auto flex min-h-[20vh] w-full max-w-6xl flex-col justify-center gap-2 px-4 py-3 md:min-h-[24vh] md:flex-row md:items-center md:justify-between md:gap-5 md:px-10 md:py-[1vh]">
+        <div className="mx-auto flex min-h-[20vh] w-full max-w-6xl flex-col justify-center gap-2 px-4 py-3 md:min-h-[24vh] md:flex-row md:items-center md:justify-between md:gap-4 md:px-10 md:py-[1vh]">
           <a
             href="#"
-            className="mx-auto w-full max-w-[360px] shrink-0 md:mx-0 md:w-[47%] md:max-w-none"
+            className="mx-auto w-full max-w-[360px] shrink-0 md:mx-0 md:w-[43%] md:max-w-none"
             aria-label="EB Partners"
           >
             <span className="relative block h-[13vh] min-h-[92px] w-full overflow-hidden md:h-[23vh] md:max-w-[660px]">
@@ -165,8 +179,9 @@ export function SiteHeader() {
               />
             </span>
           </a>
-          <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-2 gap-y-2 md:justify-end md:gap-x-5 md:gap-y-4">
-            <HeaderNav />
+          <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-2 gap-y-2 md:flex-nowrap md:justify-end md:gap-x-4 md:gap-y-0">
+            <HeaderNav showContact={false} />
+            <ContactCta />
           </div>
         </div>
       </header>

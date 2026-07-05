@@ -32,7 +32,7 @@ export const processGroups = [
       },
       {
         title: "Administration",
-        lead: "We help you deal with Polish offices.",
+        lead: "We help you deal with a Government institution.",
         description: "From paperwork to follow-up, we make the process clearer.",
       },
     ],
