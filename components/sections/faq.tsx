@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
+import { assetPath } from "@/lib/asset-path";
 import { faqGroups, type AudienceKey } from "@/lib/site-data";
 import { useEffect, useRef, useState } from "react";
 
@@ -52,9 +54,19 @@ export function FaqSection({ audience }: FaqSectionProps) {
     <section
       ref={sectionRef}
       id="faq"
-      className="section-shell section-fade border-b border-border bg-background py-14 md:py-20"
+      className="section-shell section-fade relative isolate overflow-hidden border-b border-border bg-background py-14 md:py-20"
     >
-      <Container>
+      <Image
+        src={assetPath("/images/faq-justice-bg.jpg")}
+        alt="Statue of justice representing legal guidance"
+        fill
+        sizes="100vw"
+        className="object-cover"
+        style={{ objectPosition: "66% 50%" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,246,241,0.94)_0%,rgba(248,246,241,0.82)_42%,rgba(248,246,241,0.42)_72%,rgba(12,52,39,0.18)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,rgba(248,246,241,0.5)_18%,rgba(207,178,125,0.12)_58%,var(--background)_100%)]" />
+      <Container className="relative z-10">
         <div className="mb-6 md:mb-8">
           <p className="text-sm uppercase tracking-[0.2em] text-gold">FAQ</p>
           <h2 className="mt-4 font-serif text-2xl md:text-4xl">
