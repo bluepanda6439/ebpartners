@@ -1492,7 +1492,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     header: {
       individual: "Mutengi wega",
       individualShort: "Wega",
-      business: "Mutengi webhizinesi",
+      business: "Vane Mabhizinesi",
       businessShort: "Bhizinesi",
       about: "Nezvedu",
       contact: "Taura nesu",
@@ -1518,7 +1518,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       faqCta: "Ona FAQ",
       audienceTitles: {
         individual: "Mutengi wega",
-        business: "Mutengi webhizinesi",
+        business: "Vane Mabhizinesi",
       },
       groups: {
         individual: {
@@ -1552,7 +1552,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         },
         business: {
           key: "business",
-          title: "Mutengi webhizinesi",
+          title: "Vane Mabhizinesi",
           headline: "Kumakambani anohaya kana kurelocater foreign workers.",
           description:
             "Tinobatsira teams kubata immigration cases nenzira inodzokororwa, efficient uye compliant.",
