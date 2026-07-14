@@ -8,17 +8,17 @@ export function HeroSection() {
     <section className="section-fade relative isolate overflow-hidden border-b border-border bg-surface pb-14 pt-8 md:pb-28 md:pt-16">
       <div className="absolute inset-0 z-0">
         <Image
-          src={assetPath("/images/wroclaw-contact-bg.jpg")}
+          src={assetPath("/images/hero-justice-bg.jpg")}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-94"
-          style={{ objectPosition: "center 30%" }}
+          className="object-cover opacity-90"
+          style={{ objectPosition: "64% 48%" }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,246,241,0.44)_0%,rgba(248,246,241,0.27)_46%,rgba(248,246,241,0.09)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,246,241,0.04)_0%,rgba(207,178,125,0.2)_66%,rgba(242,239,232,0.98)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(185,147,79,0.14),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,246,241,0.94)_0%,rgba(248,246,241,0.78)_42%,rgba(248,246,241,0.28)_72%,rgba(12,52,39,0.12)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,246,241,0.5)_0%,rgba(207,178,125,0.16)_62%,rgba(242,239,232,0.98)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(185,147,79,0.16),transparent_30%)]" />
       </div>
       <Container className="relative z-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div className="space-y-6">
