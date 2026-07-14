@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 
 import { contactEmail } from "@/lib/contact-data";
+import type { SiteCopy } from "@/lib/i18n";
 
 type FormState = {
   name: string;
@@ -18,7 +19,11 @@ const defaultState: FormState = {
   message: "",
 };
 
-export function ContactForm() {
+type ContactFormProps = {
+  copy: SiteCopy["contact"]["form"];
+};
+
+export function ContactForm({ copy }: ContactFormProps) {
   const [form, setForm] = useState<FormState>(defaultState);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -27,20 +32,20 @@ export function ContactForm() {
     event.preventDefault();
 
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setError("Uzupełnij wymagane pola: imię, e-mail i wiadomość.");
+      setError(copy.requiredError);
       return;
     }
 
     setError("");
     setSubmitted(true);
 
-    const subject = "E&B Partners consultation request";
+    const subject = copy.subject;
     const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone || "Not provided"}`,
+      `${copy.bodyName}: ${form.name}`,
+      `${copy.bodyEmail}: ${form.email}`,
+      `${copy.bodyPhone}: ${form.phone || copy.bodyPhoneEmpty}`,
       "",
-      "Message:",
+      `${copy.bodyMessage}:`,
       form.message,
     ].join("\n");
 
@@ -55,7 +60,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-4 md:grid-cols-2">
         <label className="text-sm font-medium text-muted">
-          Name and surname *
+          {copy.name}
           <input
             type="text"
             value={form.name}
@@ -67,7 +72,7 @@ export function ContactForm() {
           />
         </label>
         <label className="text-sm font-medium text-muted">
-          Phone
+          {copy.phone}
           <input
             type="tel"
             value={form.phone}
@@ -81,7 +86,7 @@ export function ContactForm() {
       </div>
 
       <label className="text-sm font-medium text-muted">
-        E-mail *
+        {copy.email}
         <input
           type="email"
           value={form.email}
@@ -94,7 +99,7 @@ export function ContactForm() {
       </label>
 
       <label className="text-sm font-medium text-muted">
-        Message *
+        {copy.message}
         <textarea
           value={form.message}
           onChange={(event) =>
@@ -102,14 +107,14 @@ export function ContactForm() {
           }
           rows={6}
           className="mt-2 w-full resize-none rounded-2xl border border-border bg-white px-4 py-3 text-foreground outline-none transition focus:border-forest focus:ring-4 focus:ring-forest/10"
-          placeholder="Tell us briefly what happened, what deadline applies, and what kind of support you need."
+          placeholder={copy.placeholder}
         />
       </label>
 
       {error ? <p className="text-sm text-red-700">{error}</p> : null}
       {submitted ? (
         <p className="text-sm text-green-700">
-          Your e-mail app should open with a prepared message.
+          {copy.success}
         </p>
       ) : null}
 
@@ -118,7 +123,7 @@ export function ContactForm() {
           type="submit"
           className="w-full rounded-full bg-forest px-7 py-4 text-sm font-semibold text-white shadow-[0_18px_45px_-28px_rgba(12,52,39,0.9)] transition hover:bg-gold hover:text-black sm:w-auto"
         >
-          Send
+          {copy.send}
         </button>
       </div>
     </form>

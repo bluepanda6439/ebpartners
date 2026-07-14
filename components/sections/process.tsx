@@ -5,21 +5,24 @@ import { useEffect, useRef, useState } from "react";
 
 import { Container } from "@/components/layout/container";
 import { assetPath } from "@/lib/asset-path";
-import { processGroups, type AudienceKey } from "@/lib/site-data";
+import type { SiteCopy } from "@/lib/i18n";
+import type { AudienceKey } from "@/lib/site-data";
 
 type ProcessSectionProps = {
   audience: AudienceKey;
+  copy: SiteCopy["process"];
   onAudienceChange: (audience: AudienceKey) => void;
 };
 
 export function ProcessSection({
   audience,
+  copy,
   onAudienceChange,
 }: ProcessSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [hasEntered, setHasEntered] = useState(true);
-  const activeGroup =
-    processGroups.find((group) => group.key === audience) ?? processGroups[0];
+  const processGroups = Object.values(copy.groups);
+  const activeGroup = copy.groups[audience];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -88,7 +91,7 @@ export function ProcessSection({
                 : "translate-y-10 scale-95 opacity-0 blur-sm"
             }`}
           >
-            Choose your path
+            {copy.eyebrow}
           </p>
           <h2
             className={`max-w-3xl font-serif text-3xl leading-tight text-white transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] md:text-5xl ${
@@ -97,7 +100,7 @@ export function ProcessSection({
                 : "translate-y-12 scale-95 opacity-0 blur-sm"
             }`}
           >
-            Support tailored to your situation
+            {copy.title}
           </h2>
           <div
             className={`inline-flex rounded-full border border-white/25 bg-white/12 p-1 shadow-[0_18px_70px_-45px_rgba(0,0,0,0.9)] backdrop-blur-md transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -121,7 +124,7 @@ export function ProcessSection({
                   }`}
                   aria-pressed={isActive}
                 >
-                  {group.title}
+                  {copy.audienceTitles[group.key]}
                 </button>
               );
             })}
@@ -139,10 +142,10 @@ export function ProcessSection({
               <div className="absolute -left-20 top-12 size-48 rounded-full bg-gold/10 blur-3xl" />
               <div className="relative z-10">
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-gold-soft">
-                  Selected path
+                  {copy.selectedPath}
                 </p>
                 <h3 className="text-3xl font-semibold leading-tight md:text-4xl">
-                  {activeGroup.title}
+                  {copy.audienceTitles[activeGroup.key]}
                 </h3>
                 <p className="mt-5 text-base leading-7 text-white/86">
                   {activeGroup.headline}
@@ -155,13 +158,13 @@ export function ProcessSection({
                     href="#uslugi"
                     className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-forest transition hover:bg-gold hover:text-black"
                   >
-                    Zakres usług
+                    {copy.servicesCta}
                   </a>
                   <a
                     href="#faq"
                     className="inline-flex rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-gold-soft hover:text-gold-soft"
                   >
-                    View FAQ
+                    {copy.faqCta}
                   </a>
                 </div>
               </div>

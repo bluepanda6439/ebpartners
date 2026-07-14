@@ -3,10 +3,15 @@
 import { FaqSection } from "@/components/sections/faq";
 import { ProcessSection } from "@/components/sections/process";
 import { ServicesSection } from "@/components/sections/services";
+import type { SiteCopy } from "@/lib/i18n";
 import type { AudienceKey } from "@/lib/site-data";
 import { startTransition, useEffect, useState } from "react";
 
-export function AudienceFlow() {
+type AudienceFlowProps = {
+  copy: SiteCopy;
+};
+
+export function AudienceFlow({ copy }: AudienceFlowProps) {
   const [audience, setAudience] = useState<AudienceKey>("individual");
 
   const updateAudience = (nextAudience: AudienceKey) => {
@@ -34,9 +39,13 @@ export function AudienceFlow() {
 
   return (
     <>
-      <ProcessSection audience={audience} onAudienceChange={updateAudience} />
-      <FaqSection audience={audience} />
-      <ServicesSection audience={audience} />
+      <ProcessSection
+        audience={audience}
+        copy={copy.process}
+        onAudienceChange={updateAudience}
+      />
+      <FaqSection audience={audience} copy={copy.faq} />
+      <ServicesSection audience={audience} copy={copy.services} />
     </>
   );
 }

@@ -4,14 +4,16 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { assetPath } from "@/lib/asset-path";
-import { serviceGroups, type AudienceKey } from "@/lib/site-data";
+import type { SiteCopy } from "@/lib/i18n";
+import type { AudienceKey } from "@/lib/site-data";
 
 type ServicesSectionProps = {
   audience: AudienceKey;
+  copy: SiteCopy["services"];
 };
 
-export function ServicesSection({ audience }: ServicesSectionProps) {
-  const activeServices = serviceGroups[audience];
+export function ServicesSection({ audience, copy }: ServicesSectionProps) {
+  const activeServices = copy.groups[audience];
 
   return (
     <section
@@ -31,10 +33,10 @@ export function ServicesSection({ audience }: ServicesSectionProps) {
       <Container className="relative z-10">
         <div className="reveal-on-scroll mb-10 max-w-3xl">
           <p className="text-base font-semibold uppercase tracking-[0.32em] text-gold md:text-xl">
-            Oferta
+            {copy.eyebrow}
           </p>
           <h2 className="mt-4 font-serif text-3xl leading-tight md:text-5xl">
-            Zakres usług
+            {copy.title}
           </h2>
           <p className="mt-5 max-w-2xl text-base font-semibold uppercase leading-8 tracking-[0.18em] text-gold md:text-lg">
             {activeServices.intro}
