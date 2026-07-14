@@ -1,19 +1,21 @@
 "use client";
 
 import { Container } from "@/components/layout/container";
-import { faqGroups, type AudienceKey } from "@/lib/site-data";
+import type { SiteCopy } from "@/lib/i18n";
+import type { AudienceKey } from "@/lib/site-data";
 import { useEffect, useRef, useState } from "react";
 
 type FaqSectionProps = {
   audience: AudienceKey;
+  copy: SiteCopy["faq"];
 };
 
-export function FaqSection({ audience }: FaqSectionProps) {
+export function FaqSection({ audience, copy }: FaqSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [hasEntered, setHasEntered] = useState(true);
   const [openKey, setOpenKey] = useState<string | null>(null);
-  const activeFaq = faqGroups[audience];
+  const activeFaq = copy.groups[audience];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -56,9 +58,11 @@ export function FaqSection({ audience }: FaqSectionProps) {
     >
       <Container>
         <div className="mb-6 md:mb-8">
-          <p className="text-sm uppercase tracking-[0.2em] text-gold">FAQ</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-gold">
+            {copy.eyebrow}
+          </p>
           <h2 className="mt-4 font-serif text-2xl md:text-4xl">
-            Frequently Asked Questions
+            {copy.title}
           </h2>
         </div>
         <div className="overflow-hidden rounded-3xl border border-forest/14 bg-surface shadow-[0_24px_80px_-60px_rgba(12,52,39,0.58)]">

@@ -8,8 +8,13 @@ import {
   contactLocation,
   contactPhones,
 } from "@/lib/contact-data";
+import type { SiteCopy } from "@/lib/i18n";
 
-export function FinalCtaSection() {
+type FinalCtaSectionProps = {
+  copy: SiteCopy["contact"];
+};
+
+export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
   return (
     <section
       id="kontakt"
@@ -32,15 +37,14 @@ export function FinalCtaSection() {
         <div className="mb-8 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">
           <div className="space-y-4">
             <p className="text-base font-semibold uppercase tracking-[0.24em] text-gold-soft md:text-xl">
-              Contact
+              {copy.eyebrow}
             </p>
             <h2 className="font-serif text-3xl leading-tight text-white md:text-5xl">
-              Tell us what you need to solve.
+              {copy.title}
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-white/70 md:justify-self-end">
-            Send the essential facts, deadline and documents you already have.
-            We will help you identify the safest next step.
+            {copy.description}
           </p>
         </div>
 
@@ -52,7 +56,7 @@ export function FinalCtaSection() {
                 className="group block border-b border-white/10 pb-5"
               >
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-soft">
-                  E-mail
+                  {copy.emailLabel}
                 </span>
                 <span className="mt-2 block text-lg font-semibold text-white transition group-hover:text-gold-soft">
                   {contactEmail}
@@ -97,13 +101,13 @@ export function FinalCtaSection() {
                 rel="noreferrer"
                 className="absolute bottom-4 left-4 rounded-full border border-gold/35 bg-forest/90 px-4 py-2 text-xs font-semibold text-gold-soft shadow-[0_18px_50px_-32px_rgba(0,0,0,0.9)] backdrop-blur transition hover:bg-gold hover:text-black"
               >
-                Open map
+                {copy.openMap}
               </a>
             </div>
           </div>
 
           <div className="flex rounded-[2rem] border border-gold/22 bg-[linear-gradient(180deg,#fffdf8_0%,#f5f0e6_100%)] p-5 text-foreground shadow-[0_30px_95px_-52px_rgba(0,0,0,0.98)] md:p-7">
-            <ContactForm />
+            <ContactForm copy={copy.form} />
           </div>
         </div>
       </Container>

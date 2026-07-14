@@ -4,28 +4,19 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { assetPath } from "@/lib/asset-path";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import type { Locale, SiteCopy } from "@/lib/i18n";
 import type { AudienceKey } from "@/lib/site-data";
 
 const clientNavItems: Array<{
   audience: AudienceKey;
-  label: string;
-  shortLabel: string;
 }> = [
   {
     audience: "individual",
-    label: "Klient Indywidualny",
-    shortLabel: "Indywidualny",
   },
   {
     audience: "business",
-    label: "Klient Biznesowy",
-    shortLabel: "Biznesowy",
   },
-];
-
-const dropdownLinks = [
-  { href: "#faq", label: "FAQ" },
-  { href: "#uslugi", label: "Zakres usług" },
 ];
 
 function selectAudience(audience: AudienceKey) {
@@ -47,13 +38,20 @@ function ClientDropdown({
   audience,
   label,
   shortLabel,
+  dropdownLabels,
   compact = false,
 }: {
   audience: AudienceKey;
   label: string;
   shortLabel: string;
+  dropdownLabels: Pick<SiteCopy["header"], "faq" | "services">;
   compact?: boolean;
 }) {
+  const dropdownLinks = [
+    { href: "#faq", label: dropdownLabels.faq },
+    { href: "#uslugi", label: dropdownLabels.services },
+  ];
+
   return (
     <div className="group relative flex items-center">
       <a
@@ -83,7 +81,13 @@ function ClientDropdown({
   );
 }
 
-function ContactCta({ compact = false }: { compact?: boolean }) {
+function ContactCta({
+  label,
+  compact = false,
+}: {
+  label: string;
+  compact?: boolean;
+}) {
   return (
     <a
       href="#kontakt"
@@ -93,17 +97,25 @@ function ContactCta({ compact = false }: { compact?: boolean }) {
           : "px-3 py-2 text-sm md:px-4 md:py-2 md:text-lg lg:text-xl"
       }`}
     >
-      Skontaktuj się
+      {label}
     </a>
   );
 }
 
 function HeaderNav({
+  copy,
+  locale,
+  onLocaleChange,
   compact = false,
   showContact = true,
+  showLanguage = true,
 }: {
+  copy: SiteCopy["header"];
+  locale: Locale;
+  onLocaleChange: (locale: Locale) => void;
   compact?: boolean;
   showContact?: boolean;
+  showLanguage?: boolean;
 }) {
   return (
     <nav
@@ -117,8 +129,15 @@ function HeaderNav({
         <ClientDropdown
           key={item.audience}
           audience={item.audience}
-          label={item.label}
-          shortLabel={item.shortLabel}
+          label={
+            item.audience === "individual" ? copy.individual : copy.business
+          }
+          shortLabel={
+            item.audience === "individual"
+              ? copy.individualShort
+              : copy.businessShort
+          }
+          dropdownLabels={copy}
           compact={compact}
         />
       ))}
@@ -128,14 +147,32 @@ function HeaderNav({
           compact ? "px-1.5 py-1.5 md:px-2 md:py-2" : "px-1.5 py-1.5 md:px-1 md:py-2"
         }`}
       >
-        O nas
+        {copy.about}
       </a>
-      {showContact ? <ContactCta compact={compact} /> : null}
+      {showContact ? <ContactCta label={copy.contact} compact={compact} /> : null}
+      {showLanguage ? (
+        <LanguageSwitcher
+          locale={locale}
+          label={copy.language}
+          onLocaleChange={onLocaleChange}
+          compact={compact}
+        />
+      ) : null}
     </nav>
   );
 }
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  copy: SiteCopy["header"];
+  locale: Locale;
+  onLocaleChange: (locale: Locale) => void;
+};
+
+export function SiteHeader({
+  copy,
+  locale,
+  onLocaleChange,
+}: SiteHeaderProps) {
   const largeHeaderRef = useRef<HTMLElement>(null);
   const frameRef = useRef<number | null>(null);
   const showCompactRef = useRef(false);
@@ -209,8 +246,19 @@ export function SiteHeader() {
             </span>
           </a>
           <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-2 gap-y-2 md:flex-nowrap md:justify-end md:gap-x-4 md:gap-y-0">
-            <HeaderNav showContact={false} />
-            <ContactCta />
+            <HeaderNav
+              copy={copy}
+              locale={locale}
+              onLocaleChange={onLocaleChange}
+              showContact={false}
+              showLanguage={false}
+            />
+            <ContactCta label={copy.contact} />
+            <LanguageSwitcher
+              locale={locale}
+              label={copy.language}
+              onLocaleChange={onLocaleChange}
+            />
           </div>
         </div>
       </header>
@@ -241,7 +289,12 @@ export function SiteHeader() {
               />
             </span>
           </a>
-          <HeaderNav compact />
+          <HeaderNav
+            copy={copy}
+            locale={locale}
+            onLocaleChange={onLocaleChange}
+            compact
+          />
         </div>
       </header>
     </>
