@@ -1492,7 +1492,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     header: {
       individual: "Mutengi wega",
       individualShort: "Wega",
-      business: "Mutengi webhizinesi",
+      business: "Vane Mabhizinesi",
       businessShort: "Bhizinesi",
       about: "Nezvedu",
       contact: "Taura nesu",
@@ -1502,9 +1502,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     hero: {
       eyebrow: "Residence legalization uye legal consulting",
-      title: "Tinobatanidza foreign nationals nePolish legal system.",
+      title: "Tinobatanidza Vatorwa nePolish legal system.",
       body:
-        "Tinobatsira foreigners nemakambani kufamba munyaya dzemutemo zviri efficient uye zviri in compliance with the law. Tinotsanangura mutemo zvakajeka, tobatsira pakutaura nema authorities, uye tinokubatsira kuti uve nerunyararo mupfungwa.",
+        "Tinobatsira Vatorwa nemakambani kufamba munyaya dzemutemo zviri efficient uye zviri in compliance with the law. Tinotsanangura mutemo zvakajeka, tobatsira pakutaura Nevakuru vehurumende ne mitemo, uye tinokubatsira kuti uwane Kugadzikana mupfungwa.",
       selectPath: "Sarudza nzira yako",
       meetTeam: "Sangana nechikwata",
       teamEyebrow: "Chikwata cheE&B Partners",
@@ -1512,21 +1512,21 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     process: {
       eyebrow: "Sarudza nzira yako",
-      title: "Support yakagadzirirwa situation yako",
+      title: "Support yakagadzirirwa Mamiriro ako",
       selectedPath: "Nzira yawasarudza",
       servicesCta: "Masevhisi",
-      faqCta: "Ona FAQ",
+      faqCta: "Ona Mibvunzo",
       audienceTitles: {
         individual: "Mutengi wega",
-        business: "Mutengi webhizinesi",
+        business: "Vane Mabhizinesi",
       },
       groups: {
         individual: {
           key: "individual",
           title: "Mutengi wega",
-          headline: "Kune foreigners vanoda legal guidance yakajeka muPoland.",
+          headline: "Kune Vatorwa vanoda legal guidance yakajeka muPoland.",
           description:
-            "Tinoongorora situation yako, totsanangura options dzako uye tobatsira kufamba nemaPolish procedures nechivimbo.",
+            "Tinoongorora Mamiriro ako, totsanangura options dzako uye tobatsira kufamba nemaPolish procedures nechivimbo.",
           points: [
             {
               title: "Kodzero pabasa",
@@ -1552,8 +1552,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         },
         business: {
           key: "business",
-          title: "Mutengi webhizinesi",
-          headline: "Kumakambani anohaya kana kurelocater foreign workers.",
+          title: "Vane Mabhizinesi",
+          headline: "Kumakambani anohaya kana kurelocater Vatorwa workers.",
           description:
             "Tinobatsira teams kubata immigration cases nenzira inodzokororwa, efficient uye compliant.",
           points: [
@@ -1595,7 +1595,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             {
               question: "Legal stay yangu muPoland yava kuda kupera. Pane zvandichiri kuita here?",
               answer:
-                "Timing yakakosha, asi pane situations dzinogona kuva nema legal options. Tinoongorora risk, totsanangura urgent steps uye tobatsira kuita before deadline.",
+                "Timing yakakosha, asi pane Mamiriro anogona kuva nema legal options. Tinoongorora risk, totsanangura urgent steps uye tobatsira kuita before deadline.",
             },
             {
               question: "Employer wangu anoda kundihaya. Ndeapi ma documents aanofanira kugadzira?",
@@ -1610,7 +1610,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             {
               question: "Ndakasaina employment contract iri muPolish chete - zviri valid here?",
               answer:
-                "Kazhinji hazvina kukwana. Contract ye foreign worker inofanira kunge iri written uye mumutauro waanonzwisisa. Kana iri foreign-language-only, sworn translation to Polish inogona kudiwa; bilingual Polish-foreign contract kazhinji haidi separate sworn translation.",
+                "Kazhinji hazvina kukwana. Contract ye Mutorwa inofanira kunge iri written uye mumutauro waanonzwisisa. Kana iri foreign-language-only, sworn translation to Polish inogona kudiwa; bilingual Polish-foreign contract kazhinji haidi separate sworn translation.",
             },
             {
               question: "Munobatsira here kana paine refusal kana appeal?",
@@ -1634,7 +1634,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             },
           ],
           disclaimer:
-            "Information iyi ndeye general nature uye haisi legal advice. Situation yega yega yakasiyana - contact E&B Partners kuti muwane consultation inoenderana nemamiriro enyu.",
+            "Information iyi ndeye general nature uye haisi legal advice. Mamiriro ega ega akasiyana - contact E&B Partners kuti muwane consultation inoenderana nemamiriro enyu.",
         },
         business: {
           items: [
@@ -1656,12 +1656,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             {
               question: "Munogona audit hiring kana legalization process yedu here?",
               answer:
-                "Hongu. Tinogona ku review processes, documents uye risks before hiring foreigners kana pakuvandudza workflow.",
+                "Hongu. Tinogona ku review processes, documents uye risks before hiring Vatorwa kana pakuvandudza workflow.",
             },
             {
               question: "Munotsigira candidates nevashandi varipo here?",
               answer:
-                "Hongu. Tinotsigira foreign candidates, onboarding uye ongoing work kana residence legalization matters.",
+                "Hongu. Tinotsigira Vatorwa candidates, onboarding uye ongoing work kana residence legalization matters.",
             },
             {
               question: "Munobata sei GDPR neEU data protection?",
@@ -1678,7 +1678,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       groups: {
         individual: {
           intro:
-            "Focused legal support yeforeigners vanoda clarity, safety uye practical next steps.",
+            "Focused legal support yeVatorwa vanoda clarity, safety uye practical next steps.",
           items: [
             {
               title: "Ziva rights dzako pabasa",
@@ -1706,7 +1706,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
                 "Before you sign anything, tinoverenga documents kuti tione kana zviri kukumbirwa ne employer zviri lawful.",
             },
             {
-              title: "Representation before authorities",
+              title: "Representation before Nevakuru vehurumende ne mitemo",
               description:
                 "Kana uchida munhu anomira newe pamberi pe administrative bodies, tinotaura on your behalf.",
             },
@@ -1724,7 +1724,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         },
         business: {
           intro:
-            "Kana muchihaya foreigners regularly, muchirefer multiple cases per month kana muchida legal advice for business, tinogona kutsanangura cooperation model inoenderana neworkflow yenyu.",
+            "Kana muchihaya Vatorwa regularly, muchirefer multiple cases per month kana muchida legal advice for business, tinogona kutsanangura cooperation model inoenderana neworkflow yenyu.",
           items: [
             {
               title: "Per-client fee",
@@ -1739,7 +1739,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             {
               title: "Consultations and document audit",
               description:
-                "For companies anoda ku verify processes, documents kana risks before hiring foreigners.",
+                "For companies anoda ku verify processes, documents kana risks before hiring Vatorwa.",
             },
           ],
         },
@@ -1749,7 +1749,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       eyebrow: "Nezvedu",
       title: "Sangana nechikwata cheE&B Partners",
       description:
-        "Tinosanganisa legal education, international perspective uye practical experience kuti tibatsire foreign nationals nemabhizinesi kufamba muPolish legal and administrative procedures nechivimbo.",
+        "Tinosanganisa legal education, international perspective uye practical experience kuti tibatsire Vatorwa nemabhizinesi kufamba muPolish legal and administrative procedures nechivimbo.",
       coFounder: "Co-Founder",
       members: [
         {
@@ -1757,7 +1757,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           shortName: "Benna",
           paragraphs: [
             "Chido Bennadette Hanyani, anozivikanwa neclients saBenna, legal practitioner ane over 8 years international experience mu immigration, corporate, compliance, labour, administrative, contract, human rights uye EU law.",
-            "Kushanda kuMalaysia, South Africa nePoland kwakamupa international perspective inoshandiswa kubatsira foreign nationals nemabhizinesi kufamba muPolish legal system.",
+            "Kushanda kuMalaysia, South Africa nePoland kwakamupa international perspective inoshandiswa kubatsira Vatorwa nemabhizinesi kufamba muPolish legal system.",
             "Ane LLB Laws kubva kuUniversity of London uye LLM in International and European Law kubva kuUniversity of Wroclaw.",
           ],
         },
