@@ -6,12 +6,14 @@ export const contactPhones = [
     label: "Main contact",
     phone: "+48 503 324 049",
     href: "tel:+48503324049",
+    whatsappHref: "https://wa.me/48503324049",
   },
   {
     name: "Ewelina Bojczuk",
     label: "Additional contact",
     phone: "+48 571 536 626",
     href: "tel:+48571536626",
+    whatsappHref: "https://wa.me/48571536626",
   },
 ];
 
