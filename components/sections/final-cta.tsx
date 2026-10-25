@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/sections/contact-form";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { assetPath } from "@/lib/asset-path";
 import {
   contactEmail,
@@ -65,10 +66,9 @@ export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
 
               <div className="divide-y divide-white/10">
                 {contactPhones.map((contact) => (
-                  <a
+                  <div
                     key={contact.phone}
-                    href={contact.href}
-                    className="group grid gap-2 py-5 first:pt-5 last:pb-0 sm:grid-cols-[1fr_auto] sm:items-center"
+                    className="grid gap-3 py-5 first:pt-5 last:pb-0 sm:grid-cols-[1fr_auto] sm:items-center"
                   >
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-soft">
@@ -78,17 +78,32 @@ export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
                         {contact.name}
                       </p>
                     </div>
-                    <p className="text-lg font-semibold text-gold-soft transition group-hover:text-white md:text-xl">
-                      {contact.phone}
-                    </p>
-                  </a>
+                    <div className="flex flex-col items-start gap-2 sm:items-end">
+                      <a
+                        href={contact.href}
+                        className="text-lg font-semibold text-gold-soft transition hover:text-white md:text-xl"
+                      >
+                        {contact.phone}
+                      </a>
+                      <a
+                        href={contact.whatsappHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`WhatsApp — ${contact.name}`}
+                        className="inline-flex items-center gap-2.5 rounded-full border border-gold/35 px-4 py-2 text-sm font-semibold text-gold-soft transition hover:bg-gold hover:text-black"
+                      >
+                        <WhatsAppIcon className="size-5" />
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
 
             <div className="relative h-[300px] border-t border-white/10 bg-forest-deep md:h-[360px] lg:h-[calc(100%-330px)] lg:min-h-[300px]">
               <iframe
-                title="MONO LEGALIZATION location map"
+                title={`${contactLocation.name} location map`}
                 src={contactLocation.embedSrc}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
