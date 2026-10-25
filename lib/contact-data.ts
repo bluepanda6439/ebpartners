@@ -4,8 +4,8 @@ export const contactPhones = [
   {
     name: "Benna Hanyani",
     label: "Main contact",
-    phone: "+48 503 325 049",
-    href: "tel:+48503325049",
+    phone: "+48 503 324 049",
+    href: "tel:+48503324049",
   },
   {
     name: "Ewelina Bojczuk",
