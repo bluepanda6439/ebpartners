@@ -103,7 +103,7 @@ export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
 
             <div className="relative h-[300px] border-t border-white/10 bg-forest-deep md:h-[360px] lg:h-[calc(100%-330px)] lg:min-h-[300px]">
               <iframe
-                title="MONO LEGALIZATION location map"
+                title={`${contactLocation.name} location map`}
                 src={contactLocation.embedSrc}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
