@@ -144,7 +144,7 @@ const englishTeamMembers = [
     name: "Ewelina Bojczuk",
     shortName: "Ewelina",
     paragraphs: [
-      "Ewelina Bojczuk is a law graduate and legal consultant with over 8 years of experience supporting individuals, entrepreneurs, and businesses in administrative, employment, corporate, and migration-related matters.",
+      "Ewelina Bojczuk is a law graduate and legal consultant with over 9 years of experience supporting individuals, entrepreneurs, and businesses in administrative, employment, corporate, and migration-related matters.",
       "Her legal education and practical experience give her a strong understanding of the Polish legal and administrative system - an important advantage in a field where clients often need more than procedural assistance. At E&B Partners, Ewelina helps foreign nationals and companies approach formal procedures, employment matters, business obligations, and migration processes with clarity, accuracy, and legal awareness.",
       "She holds a Master's degree in Law from the University of Silesia in Katowice. Her approach is structured, precise, and focused on making complex legal and administrative procedures easier to understand and manage.",
     ],
@@ -521,7 +521,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk jest absolwentką prawa i konsultantką prawną z ponad 8-letnim doświadczeniem we wspieraniu osób indywidualnych, przedsiębiorców i firm w sprawach administracyjnych, pracowniczych, korporacyjnych i migracyjnych.",
+            "Ewelina Bojczuk jest absolwentką prawa i konsultantką prawną z ponad 9-letnim doświadczeniem we wspieraniu osób indywidualnych, przedsiębiorców i firm w sprawach administracyjnych, pracowniczych, korporacyjnych i migracyjnych.",
             "Jej wykształcenie prawnicze i praktyka dają jej solidne zrozumienie polskiego systemu prawnego i administracyjnego - co jest szczególnie ważne tam, gdzie klient potrzebuje więcej niż samej pomocy proceduralnej.",
             "Ukończyła studia magisterskie na kierunku Prawo na Uniwersytecie Śląskim w Katowicach. Pracuje w sposób uporządkowany, precyzyjny i skoncentrowany na tym, aby złożone procedury były łatwiejsze do zrozumienia i przeprowadzenia.",
           ],
@@ -832,7 +832,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk є випускницею права та юридичною консультанткою з понад 8-річним досвідом підтримки фізичних осіб, підприємців і компаній у адміністративних, трудових, корпоративних та міграційних питаннях.",
+            "Ewelina Bojczuk є випускницею права та юридичною консультанткою з понад 9-річним досвідом підтримки фізичних осіб, підприємців і компаній у адміністративних, трудових, корпоративних та міграційних питаннях.",
             "Її юридична освіта і практичний досвід дають глибоке розуміння польської правової та адміністративної системи - важливу перевагу там, де клієнтам потрібна не лише процедурна допомога.",
             "Вона має магістерський ступінь з права Сілезького університету в Катовіце. Її підхід структурований, точний і спрямований на те, щоб складні процедури стали зрозумілішими.",
           ],
@@ -1143,7 +1143,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk - выпускница юридического факультета и юридическая консультантка с более чем 8-летним опытом поддержки физических лиц, предпринимателей и компаний в административных, трудовых, корпоративных и миграционных вопросах.",
+            "Ewelina Bojczuk - выпускница юридического факультета и юридическая консультантка с более чем 9-летним опытом поддержки физических лиц, предпринимателей и компаний в административных, трудовых, корпоративных и миграционных вопросах.",
             "Ее юридическое образование и практический опыт дают глубокое понимание польской правовой и административной системы - важное преимущество там, где клиентам нужна не только процедурная помощь.",
             "Она имеет степень магистра права Силезского университета в Катовице. Ее подход структурирован, точен и направлен на то, чтобы сложные процедуры стали понятнее.",
           ],
@@ -1454,7 +1454,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk es graduada en Derecho y consultora legal con más de 8 años de experiencia apoyando a personas, emprendedores y empresas en asuntos administrativos, laborales, corporativos y migratorios.",
+            "Ewelina Bojczuk es graduada en Derecho y consultora legal con más de 9 años de experiencia apoyando a personas, emprendedores y empresas en asuntos administrativos, laborales, corporativos y migratorios.",
             "Su formación jurídica y experiencia práctica le dan una sólida comprensión del sistema legal y administrativo polaco, una ventaja importante cuando los clientes necesitan más que asistencia procedimental.",
             "Tiene un máster en Derecho por la Universidad de Silesia en Katowice. Su enfoque es estructurado, preciso y orientado a hacer comprensibles los procedimientos complejos.",
           ],
@@ -1765,7 +1765,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk law graduate uye legal consultant ane over 8 years experience kubatsira individuals, entrepreneurs nemabhizinesi mu administrative, employment, corporate uye migration-related matters.",
+            "Ewelina Bojczuk law graduate uye legal consultant ane over 9 years experience kubatsira individuals, entrepreneurs nemabhizinesi mu administrative, employment, corporate uye migration-related matters.",
             "Legal education yake ne practical experience zvinomupa strong understanding yePolish legal and administrative system - chinhu chakakosha kana clients vachida more than procedural assistance.",
             "Ane Master's degree in Law kubva kuUniversity of Silesia in Katowice. Approach yake structured, precise uye focused pakuita kuti complex procedures dzive nyore kunzwisisa.",
           ],
@@ -2076,7 +2076,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: "Ewelina Bojczuk",
           shortName: "Ewelina",
           paragraphs: [
-            "Ewelina Bojczuk, idari, iş, kurumsal ve göçle ilgili konularda bireyleri, girişimcileri ve şirketleri destekleme konusunda 8 yılı aşkın deneyime sahip bir hukuk mezunu ve hukuki danışmandır.",
+            "Ewelina Bojczuk, idari, iş, kurumsal ve göçle ilgili konularda bireyleri, girişimcileri ve şirketleri destekleme konusunda 9 yılı aşkın deneyime sahip bir hukuk mezunu ve hukuki danışmandır.",
             "Hukuk eğitimi ve pratik deneyimi, Polonya hukuk ve idare sistemini güçlü şekilde anlamasını sağlar; bu, müşterilerin yalnızca prosedürel yardımdan fazlasına ihtiyaç duyduğu alanlarda önemli bir avantajdır.",
             "Katowice'deki Silezya Üniversitesi'nden Hukuk alanında yüksek lisans derecesine sahiptir. Yaklaşımı yapılandırılmış, kesin ve karmaşık prosedürleri daha anlaşılır hale getirmeye odaklıdır.",
           ],
