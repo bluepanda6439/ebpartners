@@ -10,6 +10,7 @@ import { AudienceFlow } from "@/components/sections/audience-flow";
 import { FinalCtaSection } from "@/components/sections/final-cta";
 import { HeroSection } from "@/components/sections/hero";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { TestimonialsSection } from "@/components/sections/testimonials";
 import {
   defaultLocale,
   getSiteCopy,
@@ -57,6 +58,7 @@ export function SiteShell() {
         <HeroSection copy={copy.hero} />
         <AudienceFlow copy={copy} />
         <AboutSection copy={copy.about} />
+        <TestimonialsSection locale={locale} />
         <FinalCtaSection copy={copy.contact} />
       </main>
       <SmoothAnchorScroll />
