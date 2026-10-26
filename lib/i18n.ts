@@ -523,7 +523,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           paragraphs: [
             "Ewelina Bojczuk jest absolwentką prawa i konsultantką prawną z ponad 9-letnim doświadczeniem we wspieraniu osób indywidualnych, przedsiębiorców i firm w sprawach administracyjnych, pracowniczych, korporacyjnych i migracyjnych.",
             "Jej wykształcenie prawnicze i praktyka dają jej solidne zrozumienie polskiego systemu prawnego i administracyjnego - co jest szczególnie ważne tam, gdzie klient potrzebuje więcej niż samej pomocy proceduralnej.",
-            "Ukończyła studia magisterskie na kierunku Prawo na Uniwersytecie Śląskim w Katowicach. Pracuje w sposób uporządkowany, precyzyjny i skoncentrowany na tym, aby złożone procedury były łatwiejsze do zrozumienia i przeprowadzenia.",
+            "Ukończyła studia magisterskie na kierunku Nauki Prawne na Uniwersytecie Śląskim w Katowicach. Pracuje w sposób uporządkowany, precyzyjny i skoncentrowany na tym, aby złożone procedury były łatwiejsze do zrozumienia i przeprowadzenia.",
           ],
         },
       ],
