@@ -22,7 +22,7 @@ export function ServicesSection({ audience, copy }: ServicesSectionProps) {
     >
       <Image
         src={assetPath("/images/review-docs-together.jpg")}
-        alt="Reviewing documents together during a legal consultation"
+        alt="Organizing documents together"
         fill
         sizes="100vw"
         className="object-cover opacity-92 motion-safe:animate-[imageDrift_18s_ease-in-out_infinite_alternate]"
@@ -43,11 +43,10 @@ export function ServicesSection({ audience, copy }: ServicesSectionProps) {
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          {activeServices.items.map((item, index) => (
+          {activeServices.items.map((item) => (
             <article
               key={item.title}
-              className="reveal-on-scroll rounded-2xl border border-white/70 bg-white/86 p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-gold/45 hover:bg-white/94 hover:shadow-[0_18px_52px_-36px_rgba(12,52,39,0.5)]"
-              style={{ animationDelay: `${index * 90}ms` }}
+              className="rounded-2xl border border-white/70 bg-white/86 p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-gold/45 hover:bg-white/94 hover:shadow-[0_18px_52px_-36px_rgba(12,52,39,0.5)]"
             >
               <div className="mb-5 h-1.5 w-16 rounded-full bg-forest" />
               <h3 className="mb-3 text-xl font-semibold">{item.title}</h3>

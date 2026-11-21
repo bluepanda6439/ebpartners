@@ -174,7 +174,7 @@ export function ProcessSection({
                 {activeGroup.points.map((point) => (
                   <div
                     key={point.title}
-                    className="reveal-on-scroll py-5 first:pt-0 last:pb-0"
+                    className="py-5 first:pt-0 last:pb-0"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">
                       {point.title}

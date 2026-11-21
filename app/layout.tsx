@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EB Partners | Doradztwo prawne",
+  title: "EB Partners | Pomoc w formalnościach",
   description:
-    "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+    "Obsługa administracyjna dokumentacji związanej z pobytem i pracą cudzoziemców w Polsce. Kompletowanie załączników i przygotowanie do złożenia.",
   openGraph: {
-    title: "EB Partners | Doradztwo prawne",
+    title: "EB Partners | Pomoc w formalnościach",
     description:
-      "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+      "Obsługa administracyjna dokumentacji związanej z pobytem i pracą cudzoziemców w Polsce. Kompletowanie załączników i przygotowanie do złożenia.",
     siteName: "EB Partners",
     locale: "pl_PL",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "EB Partners | Doradztwo prawne",
+    title: "EB Partners | Pomoc w formalnościach",
     description:
-      "Doradztwo prawne, migracyjne i administracyjne dla cudzoziemców oraz firm w Polsce.",
+      "Obsługa administracyjna dokumentacji związanej z pobytem i pracą cudzoziemców w Polsce. Kompletowanie załączników i przygotowanie do złożenia.",
   },
 };
 

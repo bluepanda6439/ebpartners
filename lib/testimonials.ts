@@ -10,10 +10,6 @@ export const testimonials = [
     alt: 'WhatsApp conversation: after receiving news of a positive decision for three years, a client replies, "Thank you so much maam i am so happy".',
   },
   {
-    file: "3.jpeg", width: 870, height: 187,
-    alt: 'WhatsApp conversation: a client thanks the team after a successful administrative court complaint and writes, "I will definitely recommend my friends to come to you for help".',
-  },
-  {
     file: "4.jpeg", width: 836, height: 175,
     alt: 'WhatsApp conversation: a client writes, "Thank you so much for your assistance, guidance and patience", and says they will recommend the team to others.',
   },
