@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="bg-[linear-gradient(135deg,#0e2d22_0%,#164231_100%)] py-10 text-white">
       <Container className="flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-semibold text-white">EB Partners</p>
+          <p className="font-semibold text-white">E&B PARTNERS SP. Z O.O.</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             {contactPhones.map((contact) => (
               <span key={contact.phone} className="flex flex-col items-start gap-1">
@@ -29,7 +29,7 @@ export function SiteFooter() {
           </div>
           <p>{contactEmail}</p>
         </div>
-        <p>© {new Date().getFullYear()} EB Partners</p>
+        <p>© {new Date().getFullYear()} E&B PARTNERS SP. Z O.O.</p>
       </Container>
     </footer>
   );
